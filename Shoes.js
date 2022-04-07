@@ -58,7 +58,7 @@ function formatCurrency(number) {
     return number.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
 }
 //ADDtoCart-------
-let cart = [];
+let cart = [];  
 function addToCart(productId) {
     let cartInfo = document.querySelector("#cart-area>a");
     let product = products.find(function (pdt) {
@@ -79,12 +79,7 @@ function addToCart(productId) {
     }
     cartInfo.innerHTML = `<i class="fas fa-shopping-cart"></i>(${cart.length})`;
     document.getElementById("total-Cart").innerHTML = (" Tổng tiền: " + totalCartItem(total) + " đ ");
-    showCartDetail();
-    if (size==="size"){
-        document.getElementById(messageId).innerHTML = message;
-        return 0;
-    }
-    
+    showCartDetail();  
 }
 // showCartItem-------
 function showCartDetail() {
@@ -106,9 +101,6 @@ function showCartDetail() {
                     </td>
         </tr>
         `
-        /* <tr>
-        <th><p style="font-weight: bold;">Tổng tiền:${totalCartItem(total)}</p></th>
-        </tr> */
     })
     document.querySelector("#cart-detail>tbody").innerHTML = htmls.join("");
 }
